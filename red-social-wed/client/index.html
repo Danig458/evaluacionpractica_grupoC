@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Social Pascualina - Registro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/REGISTRO.CSS">
-    <title>Document</title>
-</head>
-<body>
-
+    
+    </head>
 <body>
     <div class="background-pattern"></div>
     
@@ -40,9 +42,19 @@
                             <p class="mb-0">Únete a nuestra comunidad estudiantil digital</p>
                         </div>
 
-
                         <!-- Form Content -->
                         <div class="form-section">
+                            <!-- Mensajes de error y éxito -->
+                            <div id="errorMessage" class="error-message">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                <span id="errorText"></span>
+                            </div>
+                            
+                            <div id="successMessage" class="success-message">
+                                <i class="fas fa-check-circle me-2"></i>
+                                ¡Registro exitoso! Bienvenido a la Red Social Pascualina.
+                            </div>
+
                             <form id="registrationForm" novalidate>
                                 <!-- Datos del Estudiante -->
                                 <div class="section-title">
@@ -51,18 +63,16 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="identification" name="identification" placeholder="Número de identificación" required>
                                             <label for="identification">
                                                 <i class="fas fa-id-card me-2"></i>Número de Identificación
                                             </label>
-                                            <div class="invalid-feedback">
-                                                Por favor ingrese su número de identificación.
-                                            </div>
+                                            <div class="invalid-feedback" id="identification-error"></div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-floating">
                                             <select class="form-select" id="idType" name="idType" required>
                                                 <option value="">Seleccionar...</option>
@@ -74,8 +84,10 @@
                                             <label for="idType">
                                                 <i class="fas fa-file-alt me-2"></i>Tipo de Documento
                                             </label>
+                                            <div class="invalid-feedback" id="idType-error"></div>
                                         </div>
                                     </div>
+                                </div>
 
                                 <div class="row">
                                     <div class="col-md-6">
@@ -84,9 +96,7 @@
                                             <label for="firstName">
                                                 <i class="fas fa-user me-2"></i>Nombres
                                             </label>
-                                            <div class="invalid-feedback">
-                                                Por favor ingrese sus nombres.
-                                            </div>
+                                            <div class="invalid-feedback" id="firstName-error"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -95,25 +105,22 @@
                                             <label for="lastName">
                                                 <i class="fas fa-user me-2"></i>Apellidos
                                             </label>
-                                            <div class="invalid-feedback">
-                                                Por favor ingrese sus apellidos.
-                                            </div>
+                                            <div class="invalid-feedback" id="lastName-error"></div>
                                         </div>
                                     </div>
                                 </div>
 
-                                    <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-6">
                                         <div class="form-floating">
                                             <input type="date" class="form-control" id="birthDate" name="birthDate" required>
                                             <label for="birthDate">
                                                 <i class="fas fa-calendar me-2"></i>Fecha de Nacimiento
                                             </label>
-                                            <div class="invalid-feedback">
-                                                Por favor seleccione su fecha de nacimiento.
-                                            </div>
+                                            <div class="invalid-feedback" id="birthDate-error"></div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-floating">
                                             <select class="form-select" id="gender" name="gender" required>
                                                 <option value="">Seleccionar...</option>
@@ -125,6 +132,7 @@
                                             <label for="gender">
                                                 <i class="fas fa-venus-mars me-2"></i>Género
                                             </label>
+                                            <div class="invalid-feedback" id="gender-error"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -142,9 +150,7 @@
                                             <label for="phone">
                                                 <i class="fas fa-phone me-2"></i>Número de Teléfono
                                             </label>
-                                            <div class="invalid-feedback">
-                                                Por favor ingrese su número de teléfono.
-                                            </div>
+                                            <div class="invalid-feedback" id="phone-error"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -153,14 +159,10 @@
                                             <label for="email">
                                                 <i class="fas fa-envelope me-2"></i>Correo Electrónico
                                             </label>
-                                            <div class="invalid-feedback">
-                                                Por favor ingrese un correo electrónico válido.
-                                            </div>
+                                            <div class="invalid-feedback" id="email-error"></div>
                                         </div>
                                     </div>
                                 </div>
-
-
 
                                 <!-- Redes Sociales -->
                                 <div class="social-media-section">
@@ -252,7 +254,6 @@
                                     </div>
                                 </div>
 
-
                                 <!-- Terms and Conditions -->
                                 <div class="mt-4">
                                     <div class="form-check">
@@ -260,17 +261,15 @@
                                         <label class="form-check-label" for="terms">
                                             Acepto los <a href="#" class="text-primary">términos y condiciones</a> y la <a href="#" class="text-primary">política de privacidad</a>
                                         </label>
-                                        <div class="invalid-feedback">
-                                            Debe aceptar los términos y condiciones para continuar.
-                                        </div>
+                                        <div class="invalid-feedback" id="terms-error"></div>
                                     </div>
                                 </div>
 
                                 <!-- Submit Button -->
                                 <div class="text-center mt-5">
-                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5" id="submitBtn">
                                         <i class="fas fa-user-graduate me-2"></i>
-                                        Unirse a la Red Social
+                                        <span id="btnText">Unirse a la Red Social</span>
                                         <i class="fas fa-arrow-right ms-2"></i>
                                     </button>
                                 </div>
@@ -283,5 +282,12 @@
 
         <!-- Footer -->
         <footer class="text-center py-4">
-</body>
-</html>
+            <div class="container">
+                <p class="text-white mb-0">&copy; 2024 Red Social Pascualina. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
