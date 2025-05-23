@@ -1,3 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/REGISTRO.CSS">
+    <title>Document</title>
+</head>
+<body>
+    <footer class="text-center py-4">
+            <div class="container">
+                <p class="text-white mb-2">
+                    <i class="fas fa-graduation-cap me-2"></i>
+                    Red Social Pascualina - Conectando el futuro estudiantil
+                </p>
+                <p class="text-white-50 small mb-0">
+                    © 2024 Red Social Pascualina. Plataforma educativa para estudiantes universitarios.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+<body>
+    <div class="background-pattern"></div>
+    
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header-section py-4">
+            <div class="container">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h1 class="h2 mb-0 text-primary fw-bold">Red Social Pascualina</h1>
+                        <p class="mb-0 text-secondary">Conectando Estudiantes Universitarios</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="form-container animate__animated animate__fadeInUp">
+                        <!-- Form Header -->
+                        <div class="form-header">
+                            <h2 class="mb-3">
+                                <i class="fas fa-user-graduate me-2"></i>
+                                Registro de Estudiante
+                            </h2>
+                            <p class="mb-0">Únete a nuestra comunidad estudiantil digital</p>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="px-4 pt-3">
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                            </div>
+                            <small class="text-muted">Progreso del formulario: <span id="progressText">0%</span></small>
+                        </div>
+
+                        <!-- Form Content -->
+                        <div class="form-section">
+                            <form id="registrationForm" novalidate>
+                                <!-- Datos del Estudiante -->
+                                <div class="section-title">
+                                    <i class="fas fa-user-graduate text-primary"></i>
+                                    <h4>Datos del Estudiante</h4>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="identification" name="identification" placeholder="Número de identificación" required>
+                                            <label for="identification">
+                                                <i class="fas fa-id-card me-2"></i>Número de Identificación
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                Por favor ingrese su número de identificación.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="idType" name="idType" required>
+                                                <option value="">Seleccionar...</option>
+                                                <option value="cedula">Cédula de Ciudadanía</option>
+                                                <option value="pasaporte">Pasaporte</option>
+                                                <option value="extranjeria">Cédula de Extranjería</option>
+                                                <option value="tarjeta-identidad">Tarjeta de Identidad</option>
+                                            </select>
+                                            <label for="idType">
+                                                <i class="fas fa-file-alt me-2"></i>Tipo de Documento
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="studentId" name="studentId" placeholder="Código estudiantil" required>
+                                            <label for="studentId">
+                                                <i class="fas fa-id-badge me-2"></i>Código Estudiantil
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                Por favor ingrese su código estudiantil.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Nombres" required>
+                                            <label for="firstName">
+                                                <i class="fas fa-user me-2"></i>Nombres
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                Por favor ingrese sus nombres.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Apellidos" required>
+                                            <label for="lastName">
+                                                <i class="fas fa-user me-2"></i>Apellidos
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                Por favor ingrese sus apellidos.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="date" class="form-control" id="birthDate" name="birthDate" required>
+                                            <label for="birthDate">
+                                                <i class="fas fa-calendar me-2"></i>Fecha de Nacimiento
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                Por favor seleccione su fecha de nacimiento.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="gender" name="gender" required>
+                                                <option value="">Seleccionar...</option>
+                                                <option value="masculino">Masculino</option>
+                                                <option value="femenino">Femenino</option>
+                                                <option value="otro">Otro</option>
+                                                <option value="prefiero-no-decir">Prefiero no decir</option>
+                                            </select>
+                                            <label for="gender">
+                                                <i class="fas fa-venus-mars me-2"></i>Género
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Datos de Contacto -->
+                                <div class="section-title mt-4">
+                                    <i class="fas fa-phone text-primary"></i>
+                                    <h4>Información de Contacto</h4>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Teléfono" required>
+                                            <label for="phone">
+                                                <i class="fas fa-phone me-2"></i>Número de Teléfono
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                Por favor ingrese su número de teléfono.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" required>
+                                            <label for="email">
+                                                <i class="fas fa-envelope me-2"></i>Correo Electrónico
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                Por favor ingrese un correo electrónico válido.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Fotografía -->
+                                <div class="section-title mt-4">
+                                    <i class="fas fa-camera text-primary"></i>
+                                    <h4>Fotografía de Perfil</h4>
+                                </div>
+
+                                <div class="photo-upload" onclick="document.getElementById('photoInput').click()">
+                                    <img id="photoPreview" class="photo-preview" alt="Vista previa">
+                                    <div id="uploadText">
+                                        <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
+                                        <h5>Subir Fotografía</h5>
+                                        <p class="text-muted">Haga clic aquí para seleccionar una imagen<br>
+                                        <small>Formatos: JPG, PNG, GIF (Máx. 5MB)</small></p>
+                                    </div>
+                                    <input type="file" id="photoInput" name="photo" accept="image/*" style="display: none;">
+                                </div>
+
+                                <!-- Redes Sociales -->
+                                <div class="social-media-section">
+                                    <div class="section-title">
+                                        <i class="fas fa-share-alt text-primary"></i>
+                                        <h4>Redes Sociales que Utiliza</h4>
+                                    </div>
+                                    <p class="text-muted mb-3">Seleccione las redes sociales que utiliza actualmente:</p>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="social-checkbox">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="facebook" name="socialMedia" value="facebook">
+                                                    <label class="form-check-label d-flex align-items-center" for="facebook">
+                                                        <span class="social-icon facebook">
+                                                            <i class="fab fa-facebook-f"></i>
+                                                        </span>
+                                                        Facebook
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="social-checkbox">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="instagram" name="socialMedia" value="instagram">
+                                                    <label class="form-check-label d-flex align-items-center" for="instagram">
+                                                        <span class="social-icon instagram">
+                                                            <i class="fab fa-instagram"></i>
+                                                        </span>
+                                                        Instagram
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="social-checkbox">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="twitter" name="socialMedia" value="twitter">
+                                                    <label class="form-check-label d-flex align-items-center" for="twitter">
+                                                        <span class="social-icon twitter">
+                                                            <i class="fab fa-twitter"></i>
+                                                        </span>
+                                                        Twitter/X
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="social-checkbox">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="linkedin" name="socialMedia" value="linkedin">
+                                                    <label class="form-check-label d-flex align-items-center" for="linkedin">
+                                                        <span class="social-icon linkedin">
+                                                            <i class="fab fa-linkedin-in"></i>
+                                                        </span>
+                                                        LinkedIn
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="social-checkbox">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="tiktok" name="socialMedia" value="tiktok">
+                                                    <label class="form-check-label d-flex align-items-center" for="tiktok">
+                                                        <span class="social-icon tiktok">
+                                                            <i class="fab fa-tiktok"></i>
+                                                        </span>
+                                                        TikTok
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="social-checkbox">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="youtube" name="socialMedia" value="youtube">
+                                                    <label class="form-check-label d-flex align-items-center" for="youtube">
+                                                        <span class="social-icon youtube">
+                                                            <i class="fab fa-youtube"></i>
+                                                        </span>
+                                                        YouTube
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Audio Controls -->
+                                <div class="audio-controls">
+                                    <h5 class="text-primary mb-3">
+                                        <i class="fas fa-volume-up me-2"></i>
+                                        Mensaje de Bienvenida Estudiantil
+                                    </h5>
+                                    <audio id="welcomeAudio" controls class="w-100" style="max-width: 400px;">
+                                        <source src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAА1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" type="audio/mpeg">
+                                        Su navegador no soporta el elemento de audio.
+                                    </audio>
+                                    <p class="mt-2 mb-0 text-muted small">
+                                        <i class="fas fa-info-circle me-1"></i>
+                                        Escuche nuestro mensaje de bienvenida a la red social estudiantil
+                                    </p>
+                                </div>
+
+                                <!-- Google Maps -->
+                                <div class="section-title mt-4">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                    <h4>Campus Universitario</h4>
+                                </div>
+                                <div class="map-container">
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9664580374993!2d-74.06040568589394!3d4.624335596674595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a0e8b7d7b8d%3A0x1e8b7d7b8d7b8d7b!2sBogot%C3%A1%2C%20Colombia!5e0!3m2!1ses!2sco!4v1625077600000!5m2!1ses!2sco"
+                                        width="100%" 
+                                        height="100%" 
+                                        style="border:0;" 
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                                <p class="text-center text-muted mt-2">
+                                    <i class="fas fa-graduation-cap me-2"></i>
+                                    Zona Universitaria - Bogotá, Colombia
+                                </p>
+
+                                <!-- Terms and Conditions -->
                                 <div class="mt-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
